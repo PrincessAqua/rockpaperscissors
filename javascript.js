@@ -11,6 +11,37 @@ function getHumanChoice(){
     return prompt('Please select and option betwen: rock/paper/scissors');
 }
 
+let humanScore = 0;
+let computerScore = 0;
+
+function playRound(userChoice, computerChoice){
+
+    if (userChoice === computerChoice){
+        print(`Thats a Draw: ${userChoice} can't do anything agains't ${computerChoice}`);
+        return 0;
+    } 
+    
+    if (userChoice === 'rock' && computerChoice === 'scissors'){
+        humanScore++;
+        print(`You Win! ${userChoice} beats ${computerChoice}.`); return 0;
+    }else {
+        computerScore++;
+        print(`You lose! ${computerChoice} beats ${userChoice}.`); return 0;
+    } 
+
+
+}
+
+const humanSelection = getHumanChoice().toLowerCase();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
+
+
+
+
+
+
 
 
 
