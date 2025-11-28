@@ -18,19 +18,17 @@ function playRound(userChoice, computerChoice){
 
     if (userChoice === computerChoice){
         print(`Thats a Draw: ${userChoice} can't do anything agains't ${computerChoice}`);
-        return 0;
-    } 
-    
-    if (userChoice === 'rock' && computerChoice === 'scissors'){
-        humanScore++;
-        print(`You Win! ${userChoice} beats ${computerChoice}.`); return 0;
-    }else {
-        computerScore++;
-        print(`You lose! ${computerChoice} beats ${userChoice}.`); return 0;
-    } 
-
-
+    } else if ((userChoice === 'rock' && computerChoice === 'scissors') || (userChoice === 'paper' && computerChoice === 'rock') || (userChoice === 'scissors' && computerChoice === 'paper')){
+            humanScore++;
+            print(`You Win! ${userChoice} beats ${computerChoice}.`); return 0;
+        }else {
+            computerScore++;
+            print(`You lose! ${computerChoice} beats ${userChoice}.`); return 0;
+         } 
 }
+
+             
+
 
 const humanSelection = getHumanChoice().toLowerCase();
 const computerSelection = getComputerChoice();
