@@ -8,11 +8,10 @@ function getComputerChoice(){
 }
 
 function getHumanChoice(){
-    return prompt('Please select and option betwen: rock/paper/scissors');
+    return prompt('Please select and option between: rock/paper/scissors');
 }
-
-let humanScore = 0;
-let computerScore = 0;
+     
+function playGame(){
 
 function playRound(userChoice, computerChoice){
 
@@ -20,23 +19,27 @@ function playRound(userChoice, computerChoice){
         print(`Thats a Draw: ${userChoice} can't do anything agains't ${computerChoice}`);
     } else if ((userChoice === 'rock' && computerChoice === 'scissors') || (userChoice === 'paper' && computerChoice === 'rock') || (userChoice === 'scissors' && computerChoice === 'paper')){
             humanScore++;
-            print(`You Win! ${userChoice} beats ${computerChoice}.`); return 0;
+            print(`You Win! ${userChoice} beats ${computerChoice}.`);
         }else {
             computerScore++;
-            print(`You lose! ${computerChoice} beats ${userChoice}.`); return 0;
+            print(`You lose! ${computerChoice} beats ${userChoice}.`);
          } 
 }
 
-             
+    let humanScore = 0;
+    let computerScore = 0;
 
+    for (let i = 0; i < 5; i++){
+        playRound(getHumanChoice().toLowerCase(),getComputerChoice())
+    }
 
-const humanSelection = getHumanChoice().toLowerCase();
-const computerSelection = getComputerChoice();
+    if(humanScore > computerScore){
+        print('Congrats!! You Win!!')
+    }else print('DAMN! You Lose!');
 
-playRound(humanSelection, computerSelection);
+}
 
-
-
+playGame();
 
 
 
