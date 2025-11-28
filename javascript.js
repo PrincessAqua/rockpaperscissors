@@ -1,6 +1,5 @@
 function getComputerChoice(){
 
-    //random number between 0-2
     switch (Math.floor(Math.random() * 3)){
         case 0: return 'rock';
         case 1: return 'paper';
@@ -8,8 +7,10 @@ function getComputerChoice(){
     }
 }
 
+function getHumanChoice(){
+    return prompt('Please select and option betwen: rock/paper/scissors');
+}
 
-print(getComputerChoice());
 
 
 
